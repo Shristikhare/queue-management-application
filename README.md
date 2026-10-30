@@ -51,7 +51,21 @@ Make sure your MongoDB server is running.
 - **Windows** — Search for "MongoDB" in Services and start it, or run `mongod` in a terminal
 - **macOS / Linux** — Run `mongod` in a terminal, or use your system's service manager
 
-### 2. Start the backend
+### 2. Set up the environment file
+
+The `.env` file is not included in the repo for security reasons. You need to create it manually.
+
+Inside the `backend` folder, create a file named `.env` and paste the following:
+
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/queue-management
+JWT_SECRET=queue-manager-super-secret-change-in-production
+```
+
+> A reference file `backend/.env.example` is included in the repo with the same content — you can just copy and rename it to `.env`.
+
+### 3. Start the backend
 
 Open a terminal inside the project folder and run:
 
@@ -63,7 +77,7 @@ npm run dev
 
 Backend runs on **http://localhost:5000**
 
-### 3. Start the frontend
+### 4. Start the frontend
 
 Open a **new terminal** in the project folder and run:
 
@@ -75,23 +89,9 @@ npm run dev
 
 Frontend runs on **http://localhost:3000**
 
-### 4. Open the app
+### 5. Open the app
 
 Go to **http://localhost:3000** in your browser.
-
----
-
-## Default Configuration
-
-The backend `.env` file is already set up for local development:
-
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/queue-management
-JWT_SECRET=queue-manager-super-secret-change-in-production
-```
-
-No changes needed to run locally.
 
 ---
 
